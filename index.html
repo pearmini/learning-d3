@@ -1,20 +1,12 @@
 <html>
   <head>
-    <title>demo</title>
+    <title>D3 入门</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/app.css" />
     <script src="./lib/d3.min.js"></script>
     <script src="./js/bars.js"></script>
     <style>
-      #logo {
-        color: #ebebd3;
-        font-size: 20px;
-        text-transform: uppercase;
-        font-weight: bold;
-        margin-left: 25%;
-      }
-
       #content {
         width: 50%;
         max-width: 1000px;
@@ -59,8 +51,8 @@
         </p>
         <p>
           接下来我们通过对 2、1、5 的大小进行简单可视化来说明 SVG
-          的使用方式。下图中从上到下的每一个长方形依次对应
-          数字 2、1、5，他们的宽度代表数字的大小。
+          的使用方式。下图中从上到下的每一个长方形依次对应 数字
+          2、1、5，他们的宽度代表数字的大小。
         </p>
         <div class="box">
           <svg id="svg" viewBox="0 0 600 400" style="background: white;">
@@ -89,7 +81,11 @@
       </section>
       <section>
         <h2>nCov 疫情可视化</h2>
-        <p>截至 2 月 20 日 13 时，全国累计（含港澳台地区）</p>
+        <p>
+          下图是截至 2 月 20 日 13
+          时，全国累计（含港澳台地区，除去湖北省）的确诊断人数进行简单的可视化的结果。
+          使用的可视化方法是条形图，使用的工具是 D3。
+        </p>
         <div class="box">
           <svg id="bar"></svg>
         </div>
