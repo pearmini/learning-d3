@@ -43,7 +43,7 @@
       <span id="logo">hello visulization</span>
     </header>
     <div id="content">
-      <h1>D3 入门</h1>
+      <h1>D3 入门 🚀</h1>
       <p>
         D3.js 是一个 JavaScript 库，用于基于数据操作文档。D3 可帮助您使用
         HTML、SVG 和 CSS 使数据栩栩如生。D3 对 Web
@@ -59,30 +59,18 @@
         </p>
         <p>
           接下来我们通过对 2、1、5 的大小进行简单可视化来说明 SVG
-          的使用方式。下图中从上到下的每一个长方形依次对应 数字
+          的使用方式。下图中从上到下的每一个长方形依次对应数字
           2、1、5，他们的宽度代表数字的大小。
+        </p>
+        <p>
+          试一试点击下面的长方形。
         </p>
         <div class="box">
           <svg id="svg" viewBox="0 0 600 400" style="background: white;">
             <g transform="translate(50, 50)">
-              <rect
-                width="200"
-                height="80"
-                fill="steelblue"
-                transform="translate(0, 10)"
-              />
-              <rect
-                width="100"
-                height="80"
-                fill="steelblue"
-                transform="translate(0, 110)"
-              />
-              <rect
-                width="500"
-                height="80"
-                fill="steelblue"
-                transform="translate(0, 210)"
-              />
+              <rect width="200" height="80" fill="steelblue" x="0" y="10" />
+              <rect width="100" height="80" fill="steelblue" x="0" y="110" />
+              <rect width="500" height="80" fill="steelblue" x="0" y="210" />
             </g>
           </svg>
         </div>
@@ -90,9 +78,12 @@
       <section>
         <h2>nCov 疫情可视化</h2>
         <p>
-          下图是截至 2 月 20 日 13
+          下图是截至 2020 年 2 月 20 日 13
           时，全国累计（含港澳台地区，除去湖北省）的确诊断人数进行简单的可视化的结果。
-          使用的可视化方法是条形图，使用的工具是 D3。
+          用 D3 绘制了一个条形图 📊。
+        </p>
+        <p>
+          试一试鼠标移动到下面的长方形。
         </p>
         <div class="box">
           <svg id="bar"></svg>

@@ -1,5 +1,4 @@
 function bars(data) {
-  console.log(data);
   const width = 600,
     height = 400;
   const margin = { top: 20, right: 0, bottom: 30, left: 40 };
@@ -34,7 +33,6 @@ function bars(data) {
 
   svg
     .append("g")
-    .attr("fill", "steelblue")
     .selectAll("rect")
     .data(data)
     .enter()
@@ -42,12 +40,22 @@ function bars(data) {
     .attr("x", d => x(d.name))
     .attr("y", d => y(d.value))
     .attr("width", x.bandwidth())
-    .attr("height", d => y(0) - y(d.value));
+    .attr("height", d => y(0) - y(d.value))
+    .attr("fill", "steelblue")
+    .style("cursor", "pointer")
+    .on("mouseenter", function(){
+      this.setAttribute("fill", "orange")
+    })
+    .on("mouseleave", function(){
+      this.setAttribute("fill", "steelblue")
+    })
 
   svg
     .append("g")
     .call(xAxis)
-    .call(g => g.selectAll("text").attr("transform", "translate(-10, 5) rotate(-45)"));
+    .call(g =>
+      g.selectAll("text").attr("transform", "translate(-10, 5) rotate(-45)")
+    );
 
   svg.append("g").call(yAxis);
 }
