@@ -12,7 +12,7 @@
 
 HTML 是网页的结构层，用来描述网页的结构。
 
-HTML文档是超文本标记语言( Hyper Text Markup Language )的简称。它不是一门编程语言，是一种标记语言，用来描述网页。一般来说 HMTL 文档就是网页。
+HTML 文档是超文本标记语言( Hyper Text Markup Language )的简称。它不是一门编程语言，是一种标记语言，用来描述网页。一般来说 HMTL 文档就是网页。
 
 HTML 文件由一系列的标记标签和存文本组成。不同的标签有不同的性质和功能，这些标签组合在一起就是我们的页面。
 
@@ -157,7 +157,7 @@ JavaScript 是一种运行在浏览器中的解释型的编程语言。
 let a = 1;
 const b = 1;
 
-a++; // 1
+a++; // 2
 b++; // TypeError: Assignment to constant variable.
 ```
 
@@ -316,7 +316,7 @@ element.getAttribute("key");
 （3）设置属性
 
 ```js
-element.getAttribute("key", "value");
+element.setAttribute("key", "value");
 ```
 
 ### 使用方式
