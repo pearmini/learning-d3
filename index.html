@@ -62,11 +62,9 @@
           的使用方式。下图中从上到下的每一个长方形依次对应数字
           2、1、5，他们的宽度代表数字的大小。
         </p>
-        <p>
-          试一试点击下面的长方形。
-        </p>
+        <p>试一试点击下面的长方形。</p>
         <div class="box">
-          <svg id="svg" viewBox="0 0 600 400" style="background: white;">
+          <svg id="svg" viewBox="0 0 600 400" style="background: white">
             <g transform="translate(50, 50)">
               <rect width="200" height="80" fill="steelblue" x="0" y="10" />
               <rect width="100" height="80" fill="steelblue" x="0" y="110" />
@@ -82,9 +80,7 @@
           时，全国累计（含港澳台地区，除去湖北省）的确诊断人数进行简单的可视化的结果。
           用 D3 绘制了一个条形图 📊。
         </p>
-        <p>
-          试一试鼠标移动到下面的长方形。
-        </p>
+        <p>试一试鼠标移动到下面的长方形。</p>
         <div class="box">
           <svg id="bar"></svg>
         </div>
@@ -93,7 +89,7 @@
     <script>
       const rects = document.querySelectorAll("#svg rect");
 
-      rects.forEach(rect => {
+      rects.forEach((rect) => {
         rect.onclick = toggleColor;
       });
 
@@ -108,7 +104,7 @@
       }
     </script>
     <script>
-      d3.csv("./data/data.csv", d3.autoType).then(data => bars(data));
+      d3.csv("./data/data.csv", d3.autoType).then((data) => bars(data));
     </script>
   </body>
 </html>

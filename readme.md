@@ -6,13 +6,13 @@
 
 最后会开发一个响应式的网页：用 D3 通过条形图的方式对 covid-19 的确诊数进行了简单的可视化，该网页可以在电脑、平板和移动端访问。
 
-这里是在线 [demo](https://pearmini.github.io/frontend-d3-demo/)。
-  
+这里是在线 [demo](https://pearmini.github.io/learning-d3/)。
+
 ## HTML
 
 HTML 是网页的结构层，用来描述网页的结构。
 
-HTML 文档是超文本标记语言( Hyper Text Markup Language )的简称。它不是一门编程语言，是一种标记语言，用来描述网页。一般来说 HMTL 文档就是网页。
+HTML 文档是超文本标记语言( Hyper Text Markup Language )的简称。它不是一门编程语言，是一种标记语言，用来描述网页。一般来说 HTML 文档就是网页。
 
 HTML 文件由一系列的标记标签和存文本组成。不同的标签有不同的性质和功能，这些标签组合在一起就是我们的页面。
 
@@ -20,12 +20,12 @@ HTML 文件由一系列的标记标签和存文本组成。不同的标签有不
 
 ```html
 <html>
-    <head>
-        <!-- 一些不可见，用来描述文档信息的元素 -->
-    </head>
-    <body>
-        <!-- 一些可见，组成页面的元素 -->
-    </body>
+  <head>
+    <!-- 一些不可见，用来描述文档信息的元素 -->
+  </head>
+  <body>
+    <!-- 一些可见，组成页面的元素 -->
+  </body>
 </html>
 ```
 
@@ -36,7 +36,7 @@ HTML 文件由一系列的标记标签和存文本组成。不同的标签有不
 <title>hello d3</title>
 
 <!-- 指定使用字符集合 -->
-<meta charset="utf-8">
+<meta charset="utf-8" />
 
 <!-- 适配移动端 -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -48,7 +48,7 @@ HTML 文件由一系列的标记标签和存文本组成。不同的标签有不
 - 列表元素：ul、ol、li、dl、dt、dd
 - 表单元素：form、input、textarea、button、select
 - 更多……
-  
+
 ### DOM 节点
 
 浏览器把 HTML 解析为一棵 DOM Tree，每一个节点就是一个 DOM 节点。
@@ -61,14 +61,14 @@ SVG，指可缩放矢量图形（Scalable Vector Graphics），是用于描述�
 
 ```html
 <svg viewBox="0 0 400 400">
-    <rect 
-      width="100" 
-      height="200" 
-      fill="red" 
-      x=50
-      y=50
-      transform="rotate（45)"
-    />
+  <rect
+    width="100"
+    height="200"
+    fill="red"
+    x="50"
+    y="50"
+    transform="rotate（45)"
+  />
 </svg>
 ```
 
@@ -82,9 +82,9 @@ CSS 是由一个个选择器和对应的样式声明构成，基本语法如下�
 
 ```css
 selector {
-    declaration1; 
-    declaration2; 
-    ... 
+    declaration1;
+    declaration2;
+    ...
     declarationN;
 }
 ```
@@ -93,13 +93,16 @@ selector {
 
 ```css
 /* 元素选择器 */
-element {}
+element {
+}
 
 /* 类选择器 */
-.class {}
+.class {
+}
 
 /* id 选择器 */
-#id {}
+#id {
+}
 ```
 
 在 HTML 里面使用 CSS 的主要方式有三种。
@@ -108,15 +111,15 @@ element {}
 
 ```html
 <head>
-    <link rel="stylesheet" type="text/css" href="index.css">
+  <link rel="stylesheet" type="text/css" href="index.css" />
 </head>
 ```
 
 ```css
 /* index.css */
 p {
-   color:sienna;
-   margin-left:20px;
+  color: sienna;
+  margin-left: 20px;
 }
 ```
 
@@ -124,10 +127,10 @@ p {
 
 ```html
 <style>
-    p {
-       color:sienna;
-       margin-left:20px;
-    }
+  p {
+    color: sienna;
+    margin-left: 20px;
+  }
 </style>
 ```
 
@@ -161,11 +164,11 @@ a++; // 2
 b++; // TypeError: Assignment to constant variable.
 ```
 
-这特别说明一下：`const` 对于复合类型的变量，变量名不指向数据，而是指向数据所在的地址。const命令只是保证变量名指向的地址不变，并不保证该地址的数据不变，所以将一个对象声明为常量必须非常小心。
+这特别说明一下：`const` 对于复合类型的变量，变量名不指向数据，而是指向数据所在的地址。const 命令只是保证变量名指向的地址不变，并不保证该地址的数据不变，所以将一个对象声明为常量必须非常小心。
 
 ```js
 const c = [];
-c.append(1) // [1]
+c.append(1); // [1]
 ```
 
 ### 基本数据类型
@@ -175,27 +178,28 @@ c.append(1) // [1]
 ```js
 const a = 1;
 const b = 0.5;
-NaN // not a number
-Infinity // 最大的数
+NaN; // not a number
+Infinity; // 最大的数
 ```
 
 （2）String
 
 ```js
 /* 基本使用 */
-const a = 'hello world';
+const a = "hello world";
 const b = "hello world";
 
 /* 模版字符串 */
-const name = "Jim", age = 12;
+const name = "Jim",
+  age = 12;
 const hello = `My name is ${name}, and my age is ${age}`; // My name is Jim, and my age is 12.
 ```
 
 （3）Boolean
 
 ```js
-true
-false
+true;
+false;
 ```
 
 （4）Array
@@ -203,21 +207,21 @@ false
 ```js
 const a = [1, "string", false, [2]];
 
-a.push(4) // [1, "string", false, [2], 4];
-a.length // 5
+a.push(4); // [1, "string", false, [2], 4];
+a.length; // 5
 ```
 
 （5）Object
 
 ```js
 const student = {
-    name:"Jim",
-    age:20,
-    hobbies:["basketball", "badminton"],
-    hello: function() {
-        console.log("hello")
-    }
-}
+  name: "Jim",
+  age: 20,
+  hobbies: ["basketball", "badminton"],
+  hello: function () {
+    console.log("hello");
+  },
+};
 
 student.sex = "男";
 student.age = 21;
@@ -235,32 +239,32 @@ let b = null; // null
 
 和 c 语言几乎一样，下面主要介绍一下比较运算符。
 
-``` js
-a === b // good
-a == b // bad，不推荐使用
+```js
+a === b; // good
+a == b; // bad，不推荐使用
 
-a !== b
+a !== b;
 ```
 
 ### 定义函数
 
 ```js
-function add(x, y){
-    return x + y;
+function add(x, y) {
+  return x + y;
 }
 
-const add = function(x, y){
-    return x + y;
-}
+const add = function (x, y) {
+  return x + y;
+};
 
 /* 箭头函数 */
 const add = (x, y) => x + y;
 
 const add = (x, y) => {
-    return x + y;
-}
+  return x + y;
+};
 
-add(1, 1) // 2
+add(1, 1); // 2
 ```
 
 ### 判断和循环
@@ -268,29 +272,29 @@ add(1, 1) // 2
 判断方法和 C 语言中类似。
 
 ```js
-if(a === 1) {
-    // something
-}else if {
-    // do something
-}else {
-    // do something
+if (a === 1) {
+  // something
+} else if (a === 2) {
+  // do something
+} else {
+  // do something
 }
 ```
 
 ```js
 const a = [1, 2, 3];
 
-for(let i = 0; i < a.length; i++){
-    a[i] = a[i] * 2;
+for (let i = 0; i < a.length; i++) {
+  a[i] = a[i] * 2;
 } // [2, 4, 6]
 
-for(let item of a){
-    item = item * 2;
+for (let item of a) {
+  item = item * 2;
 } // [2, 4, 6]
 
-a.forEach(function(item, index){
-    item = item * 2;
-}) // [2, 4, 6]
+a.forEach(function (item, index) {
+  item = item * 2;
+}); // [2, 4, 6]
 
 const b = a.map((item, index) => item * 2);
 // a: [1, 2, 3]
@@ -338,7 +342,7 @@ console.log("hello world)
 
 ```html
 <script>
-    console.log("hello world");
+  console.log("hello world");
 </script>
 ```
 
@@ -412,8 +416,8 @@ d3.csv("1.csv", d3.autoType).then(data => {
 这里要提到一个 selections 的概念，也就是返回的 DOM 元素。
 
 ```js
-const rectlist = d3.selectAll("rect") //获得所有的 p 元素
-const rect = d3.select("rect") // 获得第一个 p 元素
+const rectlist = d3.selectAll("rect"); //获得所有的 p 元素
+const rect = d3.select("rect"); // 获得第一个 p 元素
 ```
 
 ### 数据和 DOM 绑定
@@ -421,26 +425,22 @@ const rect = d3.select("rect") // 获得第一个 p 元素
 当我们有了数据和 DOM 之后，就可以对它们进行绑定了。
 
 ```js
-const data = [ /*... */ ];
+const data = [
+  /*... */
+];
 const selections = d3.selectAll("selector");
 ```
 
-我们通过 data 方法对数据进行绑定，并且将绑定好数据的 selections 分为3个部分。
+我们通过 data 方法对数据进行绑定，并且将绑定好数据的 selections 分为 3 个部分。
 
 ![845855-20161020140040467-439041801.png](https://i.loli.net/2020/02/21/2HnOZR1gVBuG9hP.png)
 
 ```js
-const upate = selections
-            .data(data)
-            .attr(/***/);
+const upate = selections.data(data).attr(/***/);
 
-const enter = update
-            .enter()
-            .append("rect");
+const enter = update.enter().append("rect");
 
-const exit = update
-            .exit()
-            .remove();
+const exit = update.exit().remove();
 ```
 
 ### 将数据的特征映射为 DOM 的属性
@@ -452,14 +452,13 @@ const exit = update
 （1）首先是线性比例尺
 
 ![2019042510530490.png](https://i.loli.net/2020/02/21/QmEv3cSRIj4GfBl.png)
-```js
-const y = d3.scaleLinear()
-    .domin([1, 5])
-    .range([0, 100])
 
-y(1) // 0
-y(4) // 75
-y(5) // 100
+```js
+const y = d3.scaleLinear().domin([1, 5]).range([0, 100]);
+
+y(1); // 0
+y(4); // 75
+y(5); // 100
 ```
 
 （2）然后是序数比例尺。
@@ -467,9 +466,7 @@ y(5) // 100
 ![20190425105335723.png](https://i.loli.net/2020/02/21/k3cRH4LbnwTavNh.png)
 
 ```js
-const x = d3.scaleBand()
-    .domain([1, 2, 3, 4])
-    .range([0, 100])
+const x = d3.scaleBand().domain([1, 2, 3, 4]).range([0, 100]);
 
 x(1); // 0
 x(2); // 25
@@ -483,9 +480,9 @@ x(4); // 75
 
 ```js
 enter
-    .attr("x", d => x(d.name))
-    .attr("y", d => y(d.value))
-    .style("cursor", "pointer");
+  .attr("x", (d) => x(d.name))
+  .attr("y", (d) => y(d.value))
+  .style("cursor", "pointer");
 ```
 
 ### 绑定事件
@@ -494,16 +491,16 @@ enter
 
 ```js
 // 正确
-enter.on("click", function(d){
-    // 其中 d 是数据，this 是当前的 DOM
-    console.log(d, this);
-})
+enter.on("click", function (d) {
+  // 其中 d 是数据，this 是当前的 DOM
+  console.log(d, this);
+});
 
 // 错误
-enter.on("click", d => {
-    // 这里的 this 是全局对象
-    console.log(this);
-})
+enter.on("click", (d) => {
+  // 这里的 this 是全局对象
+  console.log(this);
+});
 ```
 
 ### 绘制坐标轴
@@ -512,12 +509,10 @@ enter.on("click", d => {
 
 ```js
 // 定义坐标生成器
-const xAxis = g => g.call(d3.axisBottom(x).tickSizeOuter(0))
+const xAxis = (g) => g.call(d3.axisBottom(x).tickSizeOuter(0));
 
-svg
-    .append("g")
-    .call(xAxis)
+svg.append("g").call(xAxis);
 
 // 等同于
-xAxis(svg.append("g"))
+xAxis(svg.append("g"));
 ```

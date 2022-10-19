@@ -10,26 +10,26 @@ function bars(data) {
 
   const x = d3
     .scaleBand()
-    .domain(data.map(d => d.name))
+    .domain(data.map((d) => d.name))
     .range([margin.left, width - margin.left - margin.right])
     .padding(0.2);
 
   const y = d3
     .scaleLinear()
-    .domain([0, d3.max(data, d => d.value)])
+    .domain([0, d3.max(data, (d) => d.value)])
     .nice()
     .range([height - margin.bottom, margin.top]);
 
-  const xAxis = g =>
+  const xAxis = (g) =>
     g
       .attr("transform", `translate(${0}, ${height - margin.bottom})`)
       .call(d3.axisBottom(x).tickSizeOuter(0));
 
-  const yAxis = g =>
+  const yAxis = (g) =>
     g
       .attr("transform", `translate(${margin.left}, 0)`)
       .call(d3.axisLeft(y))
-      .call(g => g.select(".domain").remove());
+      .call((g) => g.select(".domain").remove());
 
   svg
     .append("g")
@@ -37,23 +37,23 @@ function bars(data) {
     .data(data)
     .enter()
     .append("rect")
-    .attr("x", d => x(d.name))
-    .attr("y", d => y(d.value))
+    .attr("x", (d) => x(d.name))
+    .attr("y", (d) => y(d.value))
     .attr("width", x.bandwidth())
-    .attr("height", d => y(0) - y(d.value))
+    .attr("height", (d) => y(0) - y(d.value))
     .attr("fill", "steelblue")
     .style("cursor", "pointer")
-    .on("mouseenter", function(){
-      this.setAttribute("fill", "orange")
+    .on("mouseenter", function () {
+      this.setAttribute("fill", "orange");
     })
-    .on("mouseleave", function(){
-      this.setAttribute("fill", "steelblue")
-    })
+    .on("mouseleave", function () {
+      this.setAttribute("fill", "steelblue");
+    });
 
   svg
     .append("g")
     .call(xAxis)
-    .call(g =>
+    .call((g) =>
       g.selectAll("text").attr("transform", "translate(-10, 5) rotate(-45)")
     );
 
